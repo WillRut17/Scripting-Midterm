@@ -13,6 +13,7 @@ public class BallCollide : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 transform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
+                Score.PlayerScore += 1;
             }
         }
         else if (other.gameObject.tag != "Buildings")

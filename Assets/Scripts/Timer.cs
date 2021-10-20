@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float remainingTime;
+    public Text timerText;
 
     // Update is called once per frame
     void Update()
     {
-        
+        CalculateTime(remainingTime);
+
+        if (remainingTime > 0)
+        {
+            remainingTime -= 1 * Time.deltaTime;
+        }
+        else
+        {
+            remainingTime = 0;
+            //add move to game over screen
+        }
+    }
+
+    void CalculateTime(float timeToCalculate)
+    {
+        //float minutes = Mathf.FloorToInt(timeToCalculate / 60);
+        float seconds = Mathf.FloorToInt(timeToCalculate % 60);
+        float milliseconds = timeToCalculate * 1000;
+        milliseconds = milliseconds % 1000;
+
+        //timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+        timerText.text = string.Format("{0:00}:{1:000}", seconds, milliseconds);
     }
 }
