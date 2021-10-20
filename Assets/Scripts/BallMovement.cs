@@ -26,7 +26,7 @@ public class BallMovement : MonoBehaviour
             {
                 speed += 0.05f;
                 controller.Move(this.transform.forward * speed * forward * Time.deltaTime);
-                Debug.Log(speed);
+                //Debug.Log(speed);
             }
             else if (speed >= maxSpeed)
             {
@@ -40,7 +40,7 @@ public class BallMovement : MonoBehaviour
             {
                 speed -= 0.05f;
                 controller.Move(this.transform.forward * speed * -forward * Time.deltaTime);
-                Debug.Log(speed);
+                //Debug.Log(speed);
             }
             else if (speed <= minSpeed)
             {
@@ -54,13 +54,13 @@ public class BallMovement : MonoBehaviour
             {
                 speed -= 0.05f;
                 controller.Move(this.transform.forward * speed * Time.deltaTime);
-                Debug.Log(speed);
+               //Debug.Log(speed);
             }
             else if (speed < 0)
             {
                 speed += 0.05f;
                 controller.Move(this.transform.forward * speed * Time.deltaTime);
-                Debug.Log(speed);
+                //Debug.Log(speed);
             }
             else
             {
