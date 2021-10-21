@@ -9,6 +9,7 @@ public class BallMovement : MonoBehaviour
     public float minSpeed;
     public float turningSpeed;
     public float maxSpeed;
+    private float gravity = -9.8f;
 
 
     // Update is called once per frame
@@ -67,6 +68,8 @@ public class BallMovement : MonoBehaviour
                 speed = 0.0f;
             }
         }
+
+        controller.Move(this.transform.up * gravity * Time.deltaTime);
 
         this.transform.localEulerAngles = tempR;
     }

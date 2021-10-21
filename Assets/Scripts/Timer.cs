@@ -28,10 +28,10 @@ public class Timer : MonoBehaviour
     {
         //float minutes = Mathf.FloorToInt(timeToCalculate / 60);
         float seconds = Mathf.FloorToInt(timeToCalculate % 60);
-        float milliseconds = timeToCalculate * 1000;
-        milliseconds = milliseconds % 1000;
+        float milliseconds = timeToCalculate * 100;
+        milliseconds = milliseconds % 100;
 
         //timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
-        timerText.text = string.Format("{0:00}:{1:000}", seconds, milliseconds);
+        timerText.text = string.Format("{0:00}:{1:00}", seconds, milliseconds);
     }
 }
