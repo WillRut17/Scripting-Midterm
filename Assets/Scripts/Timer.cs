@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Timer : MonoBehaviour
         else
         {
             remainingTime = 0;
-            //add move to game over screen
+            SceneManager.LoadScene("Score");
         }
     }
 

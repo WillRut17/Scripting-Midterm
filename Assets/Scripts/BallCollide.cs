@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BallCollide : MonoBehaviour
 {
+    public AudioSource explosionSound;
+
+    public GameObject explosion;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Buildings")
@@ -12,7 +15,9 @@ public class BallCollide : MonoBehaviour
             if (GetComponent<Collider>().bounds.size.y > other.gameObject.GetComponent<Collider>().bounds.size.y)
             {
                 Destroy(other.gameObject);
-                transform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                explosionSound.Play(0);
+                transform.localScale += new Vector3(25f, 25f, 25f);
                 Score.PlayerScore += 1;
             }
         }

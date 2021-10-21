@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5c3e08b619f0a6f46a33fc531db43b8e
+  - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: ccff17e15c083a24c9106efd0577be36
+  - enabled: 1
+    path: Assets/Scenes/CrushingRoll.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Score.unity
+    guid: 64597b1f95513624391df4f69cc5347d
   m_configObjects: {}
