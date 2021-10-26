@@ -10,6 +10,8 @@ public class BallMovement : MonoBehaviour
     public float minSpeed;
     public float turningSpeed;
     public float maxSpeed;
+    //private Vector3 rotation;
+    //private float rotationAngle = 0.0f;
     //private float gravity = -9.8f;
 
     private void Start()
@@ -26,7 +28,7 @@ public class BallMovement : MonoBehaviour
         Vector3 tempR = this.transform.localEulerAngles;
         tempR.y += turningSpeed * Time.deltaTime * horizontal;
 
-            if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
             {
                 if (speed < maxSpeed)
                 {
@@ -73,7 +75,16 @@ public class BallMovement : MonoBehaviour
                     speed = 0.0f;
                 }
             }
-        //controller.Move(this.transform.up * gravity * Time.deltaTime);
+
+        //if (speed > 0)
+        //{
+        //    transform.Rotate(rotationAngle += speed, 0.0f, 0.0f);
+        //    Debug.Log(rotationAngle);
+        //}
+        //else
+        //{
+        //    transform.Rotate(rotationAngle -= speed, 0.0f, 0.0f);
+        //}
 
         if (Input.GetKey("escape"))
         {
